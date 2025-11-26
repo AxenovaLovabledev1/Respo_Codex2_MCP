@@ -1,4 +1,4 @@
-import pytest
+import pytest  # required for pytest.raises usage
 
 from influx_mcp.config import ConfigError, load_config
 
