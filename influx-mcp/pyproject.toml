@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "influx-mcp"
+version = "0.1.0"
+description = "MCP server for querying InfluxDB time series data"
+readme = "README.md"
+authors = [{name = "Respo Codex", email = "devnull@example.com"}]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "mcp>=0.1.0",
+    "influxdb-client>=1.43.0",
+    "influxdb>=5.3.2",
+    "pydantic>=2.5",
+    "python-dateutil>=2.8.2",
+]
+
+[project.optional-dependencies]
+formatting = ["pandas>=2.2.0"]
+dev = [
+    "pytest>=7.4",
+]
+
+[project.urls]
+Homepage = "https://example.com/influx-mcp"
+
+[tool.setuptools.package-data]
+influx_mcp = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra"
+testpaths = ["tests"]
